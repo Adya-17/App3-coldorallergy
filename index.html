@@ -39,18 +39,25 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         var allergy_count = 0;
         var cold_count = 0;
 
-
+// adds up all the answers that indicate allergy
         function allergyAdd(){
             allergy_count = allergy_count + 1;
 		alert(allergy_count);
 
         }
-
+// adds up all the answers that indicate cold
         function coldAdd(){
             cold_count = cold_count + 1;
-        }
-	resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent; 
+        } 
 	// I'm going to make my code to calculate the probabilities 
+	function getResults()  {
+	// this will ensure that my results will display on the page I want it to display on
+		var resultText = document.getElementById("results");
+	// this makes my percentage calculations
+		var allergyPercent = (allergy_count / 4) = 100;
+		var coldPercent = (cold_count / 4) = 100;
+	// this will display my results
+		resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent
 	 
 
   </script>
@@ -204,6 +211,16 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 </div> <!--This is the end of my page 6 question and content-->
 
+<!--This is the start of results page-->
+<div class="page" id="seven">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Results!</h1>
+	</div>
+
+	<!--This is my button to get results-->	
+	<div id="content" class="w3-container">
+		<p> id="results" </p>
+		<a href="#seven"  onclick="getResults();" class="w3-btn w3-black"> Click here for results!</a>
 	
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
